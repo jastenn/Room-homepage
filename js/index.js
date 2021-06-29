@@ -12,6 +12,8 @@ window.addEventListener('resize', resizeHandler)
 function hamburgerHandler() {
   topNavContainer.classList.add('active')
   navBackdrop.style.display = 'block'
+  document.body.style.height = '100vh'
+  document.body.style.overflowY = 'hidden'
   setTimeout(() => {
     backdropHandler()
   }, 150);
@@ -19,6 +21,7 @@ function hamburgerHandler() {
 
 function closeNavHandler() {
   topNavContainer.classList.remove('active')
+  document.body.removeAttribute('style')
   setTimeout(() => backdropHandler(), 100);
   setTimeout(() => navBackdrop.removeAttribute('style'), 300);
 }
