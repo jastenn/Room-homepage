@@ -10,19 +10,15 @@ const heroTextLastIdx = heroTextItems.length - 1
 carouselBtnPrev.addEventListener('click', carouselPrevBtnHandler)
 carouselBtnNext.addEventListener('click', carouselNextBtnHandler)
 
-const autoSlideShow = () => {
-  setTimeout(() => {
-    carouselBtnPrev.disabled = true
-    carouselBtnNext.disabled = true
-  }, 24200);
-  setTimeout(() => {
-    carouselNextBtnHandler()
-    autoSlideShow()
-    carouselBtnPrev.disabled = false
-  }, 25000)
-}
-
-autoSlideShow()
+window.addEventListener('keyup', (e) => {
+  if(!carouselBtnPrev.disabled && !carouselBtnNext.disabled) {
+    if(e.key === 'ArrowLeft') {
+      carouselPrevBtnHandler()
+    } else if(e.key == 'ArrowRight') {
+      carouselNextBtnHandler()
+    }
+  }
+})
 
 function carouselPrevBtnHandler() {
   //Vars
@@ -47,12 +43,11 @@ function carouselPrevBtnHandler() {
 
   carouselActiveIdx <= 0 ? carouselActiveIdx = carouselLastIdx : carouselActiveIdx --
   heroTextActiveIdx <= 0 ? heroTextActiveIdx = heroTextLastIdx : heroTextActiveIdx --
-  console.log(heroTextActiveIdx)
-
   const nextActiveCarouselItem = carauselItems[carouselActiveIdx]
   const nextActiveHeroTextItem = heroTextItems[carouselActiveIdx]
   //for carausel Img
   carouselBtnPrev.disabled = true
+  carouselBtnNext.disabled = true
   nextActiveCarouselItem.classList.add('carausel__item--fromRight')
  
 
@@ -70,6 +65,7 @@ function carouselPrevBtnHandler() {
     nextActiveCarouselItem.classList.remove('carausel__item--fromRight')
     nextActiveCarouselItem.classList.add('carousel__item--active')
     carouselBtnPrev.disabled = false
+    carouselBtnNext.disabled = false
   }, 600);
 }
 
@@ -94,12 +90,12 @@ function carouselNextBtnHandler() {
 
   carouselActiveIdx >= carouselLastIdx ? carouselActiveIdx = 0 : carouselActiveIdx ++
   heroTextActiveIdx >= heroTextLastIdx ? heroTextActiveIdx = 0 : heroTextActiveIdx ++
-  console.log(heroTextActiveIdx)
   //Vars
   const nextActiveCarouselItem = carauselItems[carouselActiveIdx]
   const nextActiveHeroTextItem = heroTextItems[carouselActiveIdx]
 
   nextActiveCarouselItem.classList.add('carausel__item--fromLeft')
+  carouselBtnPrev.disabled = true
   carouselBtnNext.disabled = true
   setTimeout(() => {
     //for hero text
@@ -114,6 +110,7 @@ function carouselNextBtnHandler() {
     nextActiveCarouselItem.classList.remove('carausel__item--fromLeft')
     nextActiveCarouselItem.classList.add('carousel__item--active')
 
+    carouselBtnPrev.disabled = false
     carouselBtnNext.disabled = false
   }, 600);
 }
