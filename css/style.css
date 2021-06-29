@@ -260,6 +260,47 @@ nav li { list-style: none }
   list-style: none;
 }
 
+.header-list__item {
+  display: none;
+}
+
+.header-list__item.header-list__item--active {
+  display: block;
+}
+
+.header-list__item--leaving {
+  display: block;
+  animation: fadeOut 300ms ease forwards;
+}
+.header-list__item--next {
+  display: block;
+  animation: fadeIn 300ms ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 .header__list {
   position: relative;
 }

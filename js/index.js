@@ -7,7 +7,7 @@ const navBackdrop = document.getElementById('backdrop')
 hamburger.addEventListener('click', hamburgerHandler)
 closeNav.addEventListener('click', closeNavHandler)
 navBackdrop.addEventListener('click', closeNavHandler)
-
+window.addEventListener('resize', resizeHandler)
 
 function hamburgerHandler() {
   topNavContainer.classList.add('active')
@@ -28,5 +28,14 @@ function backdropHandler() {
     navBackdrop.classList.add('active')
   } else {
     navBackdrop.classList.remove('active')
+  }
+}
+
+function resizeHandler(e) {
+  if(e.target.innerWidth >= 800) {
+    if(topNavContainer.classList.contains('active')) {
+      topNavContainer.classList.remove('active')
+      navBackdrop.classList.remove('active')
+    }
   }
 }
