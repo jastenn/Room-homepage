@@ -14,7 +14,7 @@ const autoSlideShow = () => {
   setTimeout(() => {
     carouselBtnPrev.disabled = true
     carouselBtnNext.disabled = true
-  }, 24500);
+  }, 24200);
   setTimeout(() => {
     carouselNextBtnHandler()
     autoSlideShow()
