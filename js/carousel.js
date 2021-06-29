@@ -13,8 +13,12 @@ carouselBtnNext.addEventListener('click', carouselNextBtnHandler)
 const autoSlideShow = () => {
   setTimeout(() => {
     carouselBtnPrev.disabled = true
+    carouselBtnNext.disabled = true
+  }, 24500);
+  setTimeout(() => {
     carouselNextBtnHandler()
     autoSlideShow()
+    carouselBtnPrev.disabled = false
   }, 25000)
 }
 

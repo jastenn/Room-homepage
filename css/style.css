@@ -430,6 +430,10 @@ nav li { list-style: none }
   .intro__carousel .carousel__controls {
     transform: translateX(100%);
   }
+  .carousel__controls > button:hover {
+    cursor: pointer;
+    background-color: var(--very-dark-gray);
+  }
 
   /*##### Intro/Hero Section Desktop ######*/
   .intro {
