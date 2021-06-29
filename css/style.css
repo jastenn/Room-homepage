@@ -339,6 +339,9 @@ nav li { list-style: none }
 }
 
 /* ########   About Section   ########## */
+.about__img {
+  height: clamp(15rem, 50vw, 20rem);
+}
 .about__img > img {
   height: 100%;
   width: 100%;
@@ -359,10 +362,19 @@ nav li { list-style: none }
 /* #####  Attribution  ######## */
 .attribution { 
   position: absolute;
-  bottom: 0;
+  bottom: .5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
   font-size: 11px; text-align: center;
   color: var(--very-dark-gray)
  }
+/* .attribution { 
+  position: absolute;
+  bottom: 0;
+  font-size: 11px; text-align: center;
+  color: var(--very-dark-gray)
+ } */
 .attribution a { color: var(--black); }
 
 /* ##########    Media queries     ######### */
@@ -449,6 +461,7 @@ nav li { list-style: none }
   }
   .about__img {
     width: calc(42% - 10rem);
+    height: unset;
   }
   .about__content {
     width: clamp(15rem, 42%, 26.125rem);

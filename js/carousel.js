@@ -10,6 +10,16 @@ const heroTextLastIdx = heroTextItems.length - 1
 carouselBtnPrev.addEventListener('click', carouselPrevBtnHandler)
 carouselBtnNext.addEventListener('click', carouselNextBtnHandler)
 
+const autoSlideShow = () => {
+  setTimeout(() => {
+    carouselBtnPrev.disabled = true
+    carouselNextBtnHandler()
+    autoSlideShow()
+  }, 25000)
+}
+
+autoSlideShow()
+
 function carouselPrevBtnHandler() {
   //Vars
   const curActiveCarouselItem = carauselItems[carouselActiveIdx]
@@ -48,7 +58,6 @@ function carouselPrevBtnHandler() {
   }, 300);
 
   setTimeout(() => {
-    carouselBtnPrev.disabled = false
     //for hero text
     nextActiveHeroTextItem.classList.remove('header-list__item--next')
     nextActiveHeroTextItem.classList.add('header-list__item--active')
@@ -56,6 +65,7 @@ function carouselPrevBtnHandler() {
     //for carausel Img
     nextActiveCarouselItem.classList.remove('carausel__item--fromRight')
     nextActiveCarouselItem.classList.add('carousel__item--active')
+    carouselBtnPrev.disabled = false
   }, 600);
 }
 
@@ -92,7 +102,6 @@ function carouselNextBtnHandler() {
     nextActiveHeroTextItem.classList.add('header-list__item--next')
   }, 300);
   setTimeout(() => {
-    carouselBtnNext.disabled = false
     //for hero img
     nextActiveHeroTextItem.classList.remove('header-list__item--next')
     nextActiveHeroTextItem.classList.add('header-list__item--active')
@@ -100,5 +109,7 @@ function carouselNextBtnHandler() {
     //for carousel img
     nextActiveCarouselItem.classList.remove('carausel__item--fromLeft')
     nextActiveCarouselItem.classList.add('carousel__item--active')
+
+    carouselBtnNext.disabled = false
   }, 600);
 }
