@@ -306,6 +306,7 @@ nav li { list-style: none }
 }
 
 .header__heading {
+  letter-spacing: -1px;
   font-weight: 600;
   font-size: 2rem;
   font-size: clamp(1.75rem, 5vw, 2.5rem);
