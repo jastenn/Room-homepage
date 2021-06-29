@@ -34,7 +34,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Solutoin URL](https://www.frontendmentor.io/solutions/room-homepage-using-html-css-and-vanilla-javascript-00FmGh6q0)
-- Live Site URL: [Live Website Url](https://room-homepage-frontendmenthor.netlify.app/)
+- Live Site URL: [Live Website Url](https://room-homepage-frontendmentor.netlify.app/)
 
 
 ## My process
