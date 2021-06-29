@@ -19,7 +19,7 @@ body {
   font-size: .75rem;
   line-height: 1.6;
   box-sizing: border-box;
-  
+  background-color: var(--white);
   width: 100%;
   max-width: 1650px;
   margin: 0 auto;
@@ -307,6 +307,7 @@ nav li { list-style: none }
 
 .header__heading {
   font-weight: 600;
+  font-size: 2rem;
   font-size: clamp(1.75rem, 5vw, 2.5rem);
   line-height: 1.3;
   padding: 0.6428em 0;
@@ -365,7 +366,8 @@ nav li { list-style: none }
 .attribution { 
   margin: .5em 0;
   width: 100%;
-  font-size: 11px; text-align: center;
+  font-size: 11px; 
+  text-align: center;
   color: var(--very-dark-gray)
  }
 /* .attribution { 
