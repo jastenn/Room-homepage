@@ -253,6 +253,9 @@ nav li { list-style: none }
 }
 
 /* #######   Intro Header   ######## */
+.intro__header {
+  min-height: 28rem;
+}
 .intro__header li {
   list-style: none;
 }
