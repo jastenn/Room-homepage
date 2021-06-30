@@ -100,6 +100,8 @@ nav li { list-style: none }
 }
 .nav__link {
   position: relative;
+  font-weight: 600;
+  text-transform: lowercase;
 }
 .nav__link::after {
   content: '';
